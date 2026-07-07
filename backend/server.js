@@ -18,19 +18,19 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "../frontend")));
 
-app.get("/colors", (req,res)=>{
+app.get("/colors", (req,res) => {
     res.json(COLORS);
 });
 
-app.get("/forms",(req,res)=>{
+app.get("/forms",(req,res) => {
     res.json(Object.values(FORMS));
 });
 
-app.get("/stickers",(req,res)=>{
+app.get("/stickers",(req,res) => {
     res.json(stickerStore.get_stickers());
 });
 
-app.post("/stickers",(req,res)=>{ // создание стикера
+app.post("/stickers",(req,res) => { // создание стикера
     const {text, color, form} = req.body;
     if (!text || text.trim() === "") {return res.status(400).json({error:"Отсутствует текст"});
     }
@@ -53,7 +53,7 @@ app.put("/stickers/:id/position", (req, res) => { // обновление коо
     res.json(sticker);
 });
 
-app.delete("/stickers/:id", (req,res)=>{ // удаление стикера
+app.delete("/stickers/:id", (req,res) => { // удаление стикера
     const deleted = stickerStore.delete_sticker(req.params.id);
     if (!deleted) {
         return res.status(404).json({error:"Стикер не найден"});
@@ -61,6 +61,11 @@ app.delete("/stickers/:id", (req,res)=>{ // удаление стикера
     res.json({message:"Стикер удален"});
 });
 
-app.listen(3000,()=>{
+app.post("/stickers/save", (req, res) => { // сохранение стикеров
+    stickerStore.save();
+    res.json({ message: "saved" });
+});
+
+app.listen(3000,() => {
     console.log("Server started on port 3000");
 });

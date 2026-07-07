@@ -250,13 +250,18 @@ document.getElementById("save").addEventListener("click", async () => {
     for (const s of stickers) {
         await fetch(`${API_URL}/stickers/${s.dataset.id}/position`, {
             method: "PUT",
-            headers: { "Content-Type": "application/json" },
+            headers: {
+                "Content-Type": "application/json"
+            },
             body: JSON.stringify({
                 x: parseInt(s.style.left),
                 y: parseInt(s.style.top)
             })
         });
     }
+    await fetch(`${API_URL}/stickers/save`, {
+        method: "POST"
+    });
     alert("Сохранение выполнено!");
 });
 
