@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<title>planer</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="main_board">
+  <img src="assets/board.jpg" class="main"/>
+  <img src="assets/cats.jpg" class="cat">
+  <div id="board"></div>
+  <div class="drop_menu">
+    <button onclick="menu_operation()" class="drop_button">
+      <img src="assets/button.jpg" alt="dropb"/>
+    </button>
+      <div id="menu_element" class="drop_el">
+        <button id="add">Добавление стикера</button>
+        <button id="save">Сохранение</button>
+        <button id="delete_all">Сброс</button>
+        <button id="print">Печать</button>
+      </div>
+  </div>
+  <div class="note">
+    <img src="assets/note.jpg" 
+    alt="calendar" 
+    class="time"/>
+    <div class="calendar">
+      <img src="assets/coffee.jpg" 
+      alt="coffee" 
+      class="coffee"/>
+      <div class="header">
+      <p id="day_number"></p>
+      <p id="month_name"></p>
+      </div>
+      <p id="day_name"></p>
+      <p id="year"></p>
+    </div>
+  </div>
+</div>
+
+<div id="sticker_menu">
+  <h3>-ˋˏ✄┈┈┈┈создание стикера┈┈┈┈</h3>
+  <label>
+    Введите текст: <input type="text" id="sticker_text"/>
+  </label>
+  <br><br>
+  <label>
+    Выберите цвет:
+    <select id="color_select">
+      <option value="#FFADAD">Красный</option>
+      <option value="#FFD6A5">Оранжевый</option>
+      <option value="#FDFFB6">Желтый</option>
+      <option value="#CAFFBF">Зеленый</option>
+      <option value="#9BF6FF">Голубой</option>
+      <option value="#A0C4FF">Синий</option>
+      <option value="#BDB2FF">Фиолетовый</option>
+      <option value="#FFC6FF">Розовый</option>
+    </select>
+  </label>
+  <div id="color_palette" class="palettec">
+    <div class="color" data-color="#FFADAD" style="background:#FFADAD"></div>
+    <div class="color" data-color="#FFD6A5" style="background:#FFD6A5"></div>
+    <div class="color" data-color="#FDFFB6" style="background:#FDFFB6"></div>
+    <div class="color" data-color="#CAFFBF" style="background:#CAFFBF"></div>
+    <div class="color" data-color="#9BF6FF" style="background:#9BF6FF"></div>
+    <div class="color" data-color="#A0C4FF" style="background:#A0C4FF"></div>
+    <div class="color" data-color="#BDB2FF" style="background:#BDB2FF"></div>
+    <div class="color" data-color="#FFC6FF" style="background:#FFC6FF"></div>
+  </div>
+  <br><br>
+  <label>
+    Выберите форму:
+    <select id="form_select">
+      <option value="rectangle">Прямоугольник</option>
+      <option value="square">Квадрат</option>
+      <option value="circle">Круг</option>
+    </select>
+  </label>
+  <div id="form_palette" class="palettef">
+    <div class="form active" data-form="rectangle">
+      <div class="form_rect"></div>
+    </div>
+    <div class="form" data-form="square">
+      <div class="form_square"></div>
+    </div>
+    <div class="form" data-form="circle">
+      <div class="form_circle"></div>
+    </div>
+  </div>
+  <br><br>
+  <button onclick="create_sticker()">Создать</button>
+  <button id="cancel_button">Отмена</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
