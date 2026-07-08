@@ -1,0 +1,257 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-image: url('assets/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+button {
+  background-color: #9bb9d7;
+  color: white;
+  padding: 7px 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.main {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#board {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+
+#main_board {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 75%;
+}
+
+.cat {
+  position: absolute;
+  top: 4%;
+  right: 2%;
+  width: 15%;
+  height: auto;
+  z-index: 3;
+}
+
+.drop_menu {
+    position: absolute;
+    right: 3%;
+    bottom: 3%;
+    z-index: 9999;
+}
+
+.drop_button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.drop_button img {
+    width: 30px;
+    height: auto;
+    display: block;
+}
+
+.drop_el {
+  position: absolute;
+  left: 10px;
+  bottom: 80px;
+  display: none;
+  flex-direction: column;
+  gap: 8px;
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 12px;
+  min-width: 180px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.2);
+}
+
+.drop_el.show {
+  display: flex;
+}
+
+.note{
+  position:absolute;
+  bottom: 4%;
+  left: 3%;
+  width: 15%;
+  z-index: 1000;
+}
+
+.time{
+  width: 90%;
+  display: block;
+}
+
+.calendar{
+  position: absolute;
+  top: -15%;
+  left: -5%;
+  width: 100%;
+  height: 100%;
+}
+
+.header{
+  position: absolute;
+  top: 5%;
+  left: 30%;
+  display: flex;
+  gap: 8px;
+}
+
+#month_name, #day_number{
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
+  color: #000000;
+}
+
+#day_name{
+  position: absolute;
+  top: 30%;
+  left: 32%;
+  font-family: 'Dancing Script', cursive;
+  font-size: 18px;
+  color: #000000;
+}
+
+#year{
+  position: absolute;
+  top: 55%;
+  left: 34%;
+  font-family: 'Dancing Script', cursive;
+  font-size: 18px;
+  color: #000000;
+}
+
+.coffee{
+  position: absolute;
+  width: 35%;
+  bottom: -20%;
+  right: -3%;
+}
+
+.palettec {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+
+.color {
+  width: 25px;
+  height: 25px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.palettef {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 8px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  transition: 0.2s;
+}
+
+.form_rect {
+  width: 40px;
+  height: 25px;
+  background: #d1d1d2;
+}
+
+.form_square {
+  width: 30px;
+  height: 30px;
+  background: #d1d1d2;
+}
+
+.form_circle {
+  width: 30px;
+  height: 30px;
+  background: #d1d1d2;
+  border-radius: 50px;
+}
+
+.sticker {
+  box-sizing: border-box;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  text-align: center; 
+  overflow: hidden; 
+  word-wrap: break-word; 
+  box-shadow: 4px 4px 10px rgba( 0, 0, 0, 0.3 ); 
+  transition: transform .2s;
+  z-index: 9999;
+}
+
+.sticker.zoomed {
+  transform: scale(1.6);
+  transition: transform 0.2s;
+  transform-origin: center;
+  z-index: 9999;
+}
+
+#sticker_menu {
+display: none; 
+position: fixed; 
+top: 50%; 
+left: 50%; 
+transform: translate(-50%, -50%);
+background: #ffffff; 
+padding: 20px; 
+border: 5px solid #91cdff; 
+z-index: 1000;
+}
+
+.sticker_delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: #a80000;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 1;
+  color: #a80000;
+}
