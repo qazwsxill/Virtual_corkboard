@@ -330,5 +330,5 @@ async function printBoard() {
     const x = (page_width - print_width) / 2;
     const y = (page_height - print_height) / 2;
     pdf.addImage(img, "PNG", x, y, print_width, print_height);
-    pdf.save("planer.pdf");
+    pdf.save("virtual_corkboard.pdf");
 }
