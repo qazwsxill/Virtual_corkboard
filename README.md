@@ -23,7 +23,7 @@
 
 ## Требования
 
-☆ Docker и Docer compose.
+☆ Docker и Docker compose.
 
 ## Запуск проекта
 
